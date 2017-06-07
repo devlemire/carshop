@@ -1,7 +1,7 @@
 import React from "react";
 import './Task.css';
 
-import { dispatchDeleteTask } from '../../../services/list_service';
+import { dispatchDeleteTask } from '../../../../services/list_service';
 
 export default function Task( { id, title } ) {
   return (

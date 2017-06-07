@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './AddTask.css';
 
 import { connect } from "react-redux";
-import { dispatchAddTask } from "../../services/list_service";
+import { dispatchAddTask } from "../../../services/list_service";
 
 class AddTask extends Component {
   constructor() {

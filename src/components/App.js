@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import AddTask from './AddTask/AddTask';
-import List from './List/List';
+import router from '../router';
 
 class App extends Component {
   render() {
     return (
       <div id="App__container">
-        <div id="Tasks__container">
-          <div id="Tasks__header">
-            <span> To Do </span>
-          </div>
-
-          <AddTask />
-          <List />
-        </div>
+        { router }
       </div>
     );
   }
