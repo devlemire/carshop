@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './AddTask.css';
 
-import { addTask } from '../../ducks/tasks';
+import { addTask } from '../../../ducks/tasks';
 import { connect } from "react-redux";
 
 class AddTask extends Component {

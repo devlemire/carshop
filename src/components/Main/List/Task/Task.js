@@ -2,7 +2,7 @@ import React from "react";
 import './Task.css';
 
 import { connect } from "react-redux";
-import { removeTask } from '../../../ducks/tasks';
+import { removeTask } from '../../../../ducks/tasks';
 
 function Task( { id, title, removeTask } ) {
   return (
