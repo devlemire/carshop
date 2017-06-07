@@ -9,8 +9,6 @@ function List( { tasks } ) {
     <Task key={ task.id } id={ task.id } title={ task.title } />
   ));
 
-  console.log(Tasks);
-
   return (
     <div id="List__container">
       <div id="List__tasksContainer">
@@ -21,7 +19,6 @@ function List( { tasks } ) {
 }
 
 function mapStateToProps( state ) {
-  console.log('mapStateToProps in List', state);
   return {
     tasks: state.tasks
   }

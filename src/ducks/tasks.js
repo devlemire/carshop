@@ -6,8 +6,6 @@ const ADD_TASK = "ADD_TASK";
 const REMOVE_TASK = "REMOVE_TASK";
 
 export default function tasks( state = initialState, action ) {
-  console.log('State', state);
-  console.log('Action', action);
   switch( action.type ) {
     case ADD_TASK:
       return {
