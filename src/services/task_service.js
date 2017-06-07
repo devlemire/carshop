@@ -15,7 +15,7 @@ export function dispatchAddTask( title ) {
 }
 
 export function dispatchPatchTask( id, obj ) {
-  const promise = axios.patch( apiURL + id, obj ).then( response => response.data );
+  const promise = axios.patch( apiURL + id, { task: obj } ).then( response => response.data );
   return store.dispatch( patchTask( promise ) );
 }
 
