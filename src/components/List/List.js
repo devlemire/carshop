@@ -4,7 +4,7 @@ import './List.css';
 import Task from './Task/Task';
 import { connect } from 'react-redux';
 
-import { dispatchGetTasks } from '../../../services/list_service';
+import { dispatchGetTasks } from '../../services/list_service';
 
 class List extends Component {
   componentDidMount() {
