@@ -3,7 +3,7 @@ import './Details.css';
 
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { dispatchPatchTask } from '../../services/task_service';
+import { dispatchPatchTask, dispatchCompleteTask } from '../../services/task_service';
 
 class Details extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class Details extends Component {
 
     this.save = this.save.bind( this );
     this.cancel = this.cancel.bind( this );
+    this.complete = this.complete.bind( this );
   }
 
   handleChange( prop, val ) {
@@ -30,6 +31,12 @@ class Details extends Component {
   cancel() {
     const { title, description } = this.props.task;
     this.setState({ title, description });
+  }
+
+  complete() {
+    const { id, history } = this.props;
+    dispatchCompleteTask( id );
+    history.push('/');
   }
 
   render() {
@@ -50,7 +57,7 @@ class Details extends Component {
             <div style={ { marginTop: '20px' } }>
               <button className="Details__btn" id="Details__saveBtn" onClick={ this.save }> Save </button>
               <button className="Details__btn" id="Details__cancelBtn" onClick={ this.cancel }> Cancel </button>
-              <button className="Details__btn" id="Details__completeBtn"> Complete </button>
+              <button className="Details__btn" id="Details__completeBtn" onClick={ this.complete }> Complete </button>
             </div>
           </div>
         </div>

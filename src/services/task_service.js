@@ -2,7 +2,7 @@ import apiURL from '../api';
 import axios from 'axios';
 import store from '../store';
 
-import { getTasks, addTask, patchTask, deleteTask } from '../ducks/tasks';
+import { getTasks, addTask, patchTask, deleteTask, completeTask } from '../ducks/tasks';
 
 export function dispatchGetTasks() {
   const promise = axios.get( apiURL ).then( response => response.data );
@@ -22,4 +22,9 @@ export function dispatchPatchTask( id, obj ) {
 export function dispatchDeleteTask( id ) {
   const promise = axios.delete( apiURL + id ).then( response => response.data );
   return store.dispatch( deleteTask( promise ) );
+}
+
+export function dispatchCompleteTask( id ) {
+  const promise = axios.put( apiURL + id ).then( response => response.data );
+  return store.dispatch( completeTask( promise ) );
 }

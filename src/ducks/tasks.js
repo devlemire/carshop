@@ -6,6 +6,7 @@ const GET_TASKS = "GET_TASKS";
 const ADD_TASK = "ADD_TASK";
 const PATCH_TASK = "PATCH_TASK";
 const DELETE_TASK = "DELETE_TASK";
+const COMPLETE_TASK = "COMPLETE_TASK";
 
 export default function tasks( state = initialState, action ) {
   console.log('State', state);
@@ -24,6 +25,10 @@ export default function tasks( state = initialState, action ) {
         tasks: action.payload
       }
     case DELETE_TASK + "_FULFILLED":
+      return {
+        tasks: action.payload
+      }
+    case COMPLETE_TASK + "_FULFILLED":
       return {
         tasks: action.payload
       }
@@ -55,6 +60,13 @@ export function patchTask( promise ) {
 export function deleteTask( promise ) {
   return {
     type: DELETE_TASK,
+    payload: promise
+  }
+}
+
+export function completeTask( promise ) {
+  return {
+    type: COMPLETE_TASK,
     payload: promise
   }
 }

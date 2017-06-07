@@ -15,7 +15,7 @@ class List extends Component {
     const { tasks } = this.props;
 
     const Tasks = tasks.map( task => (
-      <Task key={ task.id } id={ task.id } title={ task.title } />
+      <Task key={ task.id } id={ task.id } title={ task.title } complete={ task.completed } />
     ));
 
     return (
